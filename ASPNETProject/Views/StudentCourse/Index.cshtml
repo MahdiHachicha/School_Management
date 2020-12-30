@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ASPNETProject.Models.StudentCourse>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Register Student To A Course</h1>
+
+<p>
+    <a class="btn btn-outline-info" asp-action="Create">Create New Registration</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Student ID
+            </th>
+            <th>
+                Student Name
+            </th>
+            <th>
+                Course ID
+            </th>
+            <th>
+                Course Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Student.StudentId
+            </td>
+            <td>
+                @item.Student.FirstName
+                @item.Student.LastName
+            </td>
+            <td>
+                @item.Course.CourseId
+            </td>
+            <td>
+                @item.Course.CourseName
+            </td>
+            <td>
+                <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@item.StudentCourseId">Edit</a> 
+                <a class="btn btn-outline-dark" asp-action="Details" asp-route-id="@item.StudentCourseId">Details</a> 
+                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.StudentCourseId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

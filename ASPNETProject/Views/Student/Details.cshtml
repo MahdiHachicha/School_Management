@@ -1,0 +1,47 @@
+﻿@model ASPNETProject.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Student Details</h1>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Courses)
+            <label>(@ViewBag.sizeList)</label>
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var item in ViewBag.CoursesList)
+            {
+                <p>@item.CourseName</p>            
+            }
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-dark" asp-action="Edit" asp-route-id="@Model.StudentId">Edit</a> 
+    <a class="btn btn-outline-info" asp-action="Index">Back to List</a>
+</div>

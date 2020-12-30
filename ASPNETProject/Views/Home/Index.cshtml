@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To School Management Pannel</h1>
+    <br />
+</div>
+<div>
+    <div class="card text-center">
+        <div class="card-header text-white bg-dark">
+            
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Students Management</h5>
+            <p class="card-text">You can access the students list by clicking on the button below.</p>
+            <a asp-controller="Student" asp-action="Index" class="btn btn-outline-dark">Go To Students List</a>
+            <hr />
+            <h5 class="card-title">Courses Management</h5>
+            <p class="card-text">You can access the courses list by clicking on the button below.</p>
+            <a asp-controller="Course" asp-action="Index" class="btn btn-outline-dark">Go To Courses List</a>
+            <hr />
+            <h5 class="card-title">Teachers Management</h5>
+            <p class="card-text">You can access the teachers list by clicking on the button below.</p>
+            <a asp-controller="Teacher" asp-action="Index" class="btn btn-outline-dark">Go To Teachers List</a>
+            <hr />
+            <h5 class="card-title">Register A Student To A Course</h5>
+            <p class="card-text">You can access the registeration service by clicking on the button below.</p>
+            <a asp-controller="StudentCourse" asp-action="Index" class="btn btn-outline-dark">Go To The Registration Service</a>
+        </div>
+        <div class="card-footer text-muted text-white bg-dark">
+            
+        </div>
+    </div>
+</div>
